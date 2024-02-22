@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', static function () {
-    return view('home');
+    return redirect('/currency');
 });
 
 Route::prefix('currency')->name('currency.')->controller(CurrencyController::class)->group(function () {
@@ -23,9 +23,3 @@ Route::prefix('currency')->name('currency.')->controller(CurrencyController::cla
     Route::get('/', 'index')->name('index');
     Route::get('/{id}', 'show')->name('show');
 });
-
-Route::get('/dashboard', static function () {
-    return view('dashboard');
-})->name('dashboard');
-
-
