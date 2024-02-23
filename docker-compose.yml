@@ -36,7 +36,6 @@ services:
             - NODE_ENV=development
         volumes:
             - ./:/application
-        entrypoint: [ 'npm', 'run', 'dev' ]
         tty: true
         ports:
             - "5173:5173"
@@ -47,8 +46,8 @@ services:
 
     php-fpm:
 #        image: falcon4ik007/-fpm-alpine
-        image: php:8.2.6-fpm-alpine
-        #build: phpdocker/php-fpm
+        #image: php:8.2.6-fpm-alpine
+        build: phpdocker/php-fpm
         #platform: linux/amd64
         container_name: test-app-php-fpm
         working_dir: /application
