@@ -15,6 +15,9 @@
     <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
         <div class="relative rounded-xl overflow-auto p-8">
             <div class="grid grid-cols-12 gap-2 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-fuchsia rounded-lg">
+                @if(count($data)<1)
+                    <p class="bg-danger text-white p-1">no data found</p>
+                @endif
                 @foreach ($data as $row)
                     <div class="p-4 rounded-lg shadow-lg bg-gray-500">
                         <input

@@ -13,7 +13,6 @@ class CurrencyController extends Controller
     public function index()
     {
         $data = Currency::query()->orderBy('numeric_code')->get();
-
         return view('currency', ['data' => $data]);
     }
 
